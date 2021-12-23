@@ -1,4 +1,20 @@
-# Refactoring lab 2. Todo list
+# Refactoring lab 2. Todo list. Server part
+
+## How to run
+
+### Required tools
+- java 8
+- maven
+### Steps
+1. Build with command `mvn clean install`
+2. Go to directory `target`
+3. Run command `java -jar .\refactoring-lab-todo-list-api.jar`
+
+Additionally, you can use CLI arguments to set up some properties.
+For example
+```
+java -jar .\refactoring-lab-todo-list-api.jar --server.port=9000
+```
 
 ## Как добавить свои исключения в обработку исключений
 Все исключения приложения перенаправляются в `ErrorController`.

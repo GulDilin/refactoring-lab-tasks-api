@@ -7,7 +7,7 @@
   <groupId>guldilin</groupId>
   <artifactId>refactoring-lab-todo-list-api</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <name>refactoring-lab-tasks-api Maven Webapp</name>
   <url>https://github.com/GulDilin/refactoring-lab-todo-list-api</url>
@@ -51,7 +51,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-tomcat</artifactId>
-      <scope>provided</scope>
+      <scope>compile</scope>
       <version>2.6.1</version>
     </dependency>
 
@@ -104,6 +104,37 @@
         <configuration>
           <source>8</source>
           <target>8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.build.directory}/libs
+              </outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>libs/</classpathPrefix>
+              <mainClass>guldilin.Application</mainClass>
+            </manifest>
+          </archive>
         </configuration>
       </plugin>
     </plugins>
