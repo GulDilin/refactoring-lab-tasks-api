@@ -5,12 +5,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>guldilin</groupId>
-  <artifactId>refactoring-lab-tasks-api</artifactId>
+  <artifactId>refactoring-lab-todo-list-api</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>refactoring-lab-tasks-api Maven Webapp</name>
-  <url>http://www.example.com</url>
+  <url>https://github.com/GulDilin/refactoring-lab-todo-list-api</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -63,7 +63,7 @@
   </dependencies>
 
   <build>
-    <finalName>refactoring-lab-tasks-api</finalName>
+    <finalName>refactoring-lab-todo-list-api</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
